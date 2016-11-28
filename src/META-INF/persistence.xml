@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1"
+	xmlns="http://xmlns.jcp.org/xml/ns/persistence">
+	
+	<persistence-unit name="jpa" transaction-type="RESOURCE_LOCAL">
+		
+		<!-- fournisseur de persistance -->
+		<provider> org.hibernate.jpa.HibernatePersistenceProvider</provider>
+		
+		<!--classes de persistence  -->
+		<class>entities.Personne</class>
+		
+		<properties>
+			<!-- Connexion à la JDBC -->
+			<property name="javax.persistence.jdbc.driver"  value="oracle.jdbc.driver.OracleDriver"/>
+			<property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@//sol.dil.univ-mrs.fr:1521/bdetud.dil.univ-mrs.fr"/>
+			<property name="javax.persistence.jdbc.user" value="M2ISL_17"/>
+			<property name="javax.persistence.jdbc.password" value="M2ISL_17"/>
+			
+			<!-- validation de mapping -->
+			<property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>	
+			
+			<!-- properties qui permet de tracer les instruction sql genérées par le fournisseur de persistance
+				 et lui indiquer les specificités SQL de la base de donnée accédée -->
+				 
+			<property name="hibernate.show_sql" value="true"/>
+			<property name="hibernate.format_sql" value="true"/>
+			<property name="hibernate.dialect" value="org.hibernate.dialect.Oracle12cDialect"/>
+		</properties>
+	</persistence-unit>	
+</persistence>
