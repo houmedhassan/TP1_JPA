@@ -12,6 +12,9 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
@@ -32,6 +35,13 @@ public class Personne {
 	private Date dateNaissance;
 	private Civilite civilite;
 	
+	// association plusieurs-plusieurs
+	@ManyToMany
+	private List <Sport> sport;
+	
+	//association Plusieurs-Un
+	@OneToMany
+	private List<Commande> commande;
 	
 	/**
 	 * Constructor
@@ -124,4 +134,14 @@ public class Personne {
 	public void setCivilite(Civilite civilite) {
 		this.civilite = civilite;
 	}
+
+	public List<Sport> getSport() {
+		return sport;
+	}
+
+	public void setSport(List<Sport> sport) {
+		this.sport = sport;
+	}
+	
+	
 }

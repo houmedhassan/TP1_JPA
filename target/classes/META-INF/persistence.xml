@@ -8,7 +8,12 @@
 		<provider> org.hibernate.jpa.HibernatePersistenceProvider</provider>
 		
 		<!--classes de persistence  -->
-		<class>entities.Personne</class>
+		<class>application.Personne</class>
+		<class>application.Adresse</class>
+		<class>application.Article</class>
+		<class>application.Commande</class>
+		<class>application.LigneCommande</class>
+		<class>application.Sport</class>
 		
 		<properties>
 			<!-- Connexion à la JDBC -->

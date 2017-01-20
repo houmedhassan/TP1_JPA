@@ -1,10 +1,12 @@
 package application;
 
+import java.io.Serializable;
+
 import javax.persistence.Embeddable;
 import javax.persistence.Entity;
 
 @Embeddable
-public class Adresse {
+public class Adresse implements Serializable {
 	
 	private String rue;
 	private String codepostal;
